@@ -30,7 +30,7 @@
     'body': """
       ELSE
       \t${1:code}
-    """\
+    """
   'for to array':
     'prefix': 'FOR i = Low(array-name) TO High(array-name)'
     'body': """
