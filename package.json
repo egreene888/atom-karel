@@ -1,24 +1,19 @@
 {
-  "name": "karel",
-  "main": "./lib/main",
-  "version": "0.0.1",
-  "description": "Enables several code snippets and syntax highlighting for the FANUC robots programming language Karel.",
+  "name": "language-karel",
+  "main": "./lib/language-karel",
+  "version": "0.0.0",
+  "description": "Grammar and snippets for FANUC robots language Karel",
   "keywords": [
-    "karel",
-    "autocomplete",
-    "provider"
   ],
+  "activationCommands": {
+    "atom-workspace": "language-karel:toggle"
+  },
   "repository": "https://gitlab.com/teosioryt/atom-karel",
   "author": "Teodor Michalski",
   "license": "MIT",
   "engines": {
-    "atom": ">=1.15.0 <2.0.0"
+    "atom": ">=1.0.0 <2.0.0"
   },
-  "providedServices": {
-    "autocomplete.provider": {
-      "versions": {
-        "2.0.0": "getProvider"
-      }
-    }
+  "dependencies": {
   }
 }
