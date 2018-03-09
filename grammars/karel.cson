@@ -16,15 +16,6 @@
   {
     'captures':
       '1':
-        'name': 'storage.type.function.karel'
-      '2':
-        'name': 'entity.name.function.karel'
-    'match': '\\b(?i:(ROUTINE))\\b\\s+(\\w+)'
-    'name': 'meta.function.karel'
-  }
-  {
-    'captures':
-      '1':
         'name': 'keyword.control.statement.karel'
       '2':
         'name': 'entity.function.name.karel'
@@ -32,19 +23,19 @@
     'name': 'meta.function.karel'
   }
   {
-    'match': '\\b(?i:(\\%ALPHABETIZE|\\%CMOSVARS|\\%CMOS2SHADOW|\\%COMMENT|\\%CRTDEVICE|\\%DEFGROUP|\\%DELAY|\\%ENVIRONMENT|\\%INCLUDE|\\%LOCKGROUP|\\%NOABORT|\\%NOBUSYLAMP|\\%NOLOCKGROUP|\\%NOPAUSE|\\%NOPAUSESHFT|\\%PRIORITY|\\%SHADOWVARS|\\%STACKSIZE|\\%TIMESLICE|\\%TPMOTION|\\%UNINITVARS))\\b'
-    'name': 'keyword.other.directives.karel'
-  }
-  {
     'match': '\\b(?i:(ARRAY|BOOLEAN|BYTE|CONFIG|DISP_DAT_T|FILE|INTEGER|JOINTPOS|PATH|POSITION|QUEUE_TYPE|REAL|SHORT|STD_PTH_NODE|STRING|STRUCTURE|VECTOR|XYZWPR|XYZWPREX))(?=(\\(|\\b))'
     'name': 'storage.type.primitive.karel'
   }
   {
-    'match': '\\b(?i:(EVAL|FROM|IN|WHEN|WITH|OF|CASE))(?=(\\(|\\b))'
+    'match': '\\b(?i:(\\%ALPHABETIZE|\\%CMOSVARS|\\%CMOS2SHADOW|\\%COMMENT|\\%CRTDEVICE|\\%DEFGROUP|\\%DELAY|\\%ENVIRONMENT|\\%INCLUDE|\\%LOCKGROUP|\\%NOABORT|\\%NOBUSYLAMP|\\%NOLOCKGROUP|\\%NOPAUSE|\\%NOPAUSESHFT|\\%PRIORITY|\\%SHADOWVARS|\\%STACKSIZE|\\%TIMESLICE|\\%TPMOTION|\\%UNINITVARS))\\b'
+    'name': 'keyword.other.directives.karel'
+  }
+  {
+    'match': '\\b(?i:(EVAL|FROM|IN|WHEN|WITH|OF))(?=(\\(|\\b))'
     'name': 'keyword.control.clause.karel'
   }
   {
-    'match': '\\b(?i:(BEGIN|END|ELSE|FOR|ENDFOR|GOTO|IF|THEN|ENDIF|REPEAT|UNTIL|RETURN|ROUTINE|SELECT|ENDSELECT|USING|ENDUSING|WHILE|ENDWHILE|VAR|CONST))(?=(\\(|\\b))'
+    'match': '\\b(?i:(ELSE|FOR|ENDFOR|GOTO|IF|THEN|ENDIF|REPEAT|UNTIL|RETURN|USING|ENDUSING|WHILE|ENDWHILE))(?=(\\(|\\b))'
     'name': 'keyword.control.statement.karel'
   }
   {
@@ -225,6 +216,88 @@
         'match': '\'\''
         'name': 'constant.character.escape.apostrophe.karel'
       }
+    ]
+  }
+  {
+    'begin': '\\b(SELECT) *\\((\\w+)\\) +(OF)(?=[\\n|;])'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.statement.karel'
+      '2':
+        'name': 'entity.other.atribute-name.karel'
+      '3':
+        'name': 'keyword.control.statement.karel'
+    'end': '(ENDSELECT)'
+    'endCaptures':
+      '1':
+        'name': 'keyword.control.statement.karel'
+    'name': 'meta.block.select.karel'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+      {
+        'match': '\\b(?i:(CASE))(?= \\((\\w+)\\):)'
+        'name': 'keyword.control.clause.karel'
+      }
+    ]
+  }
+  {
+    'begin': '\\b(VAR)\\n'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.statement.karel'
+    'end': '(?=\\b(ROUTINE|CONST|BEGIN))'
+    'name': 'meta.block.var.karel'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  }
+  {
+    'begin': '\\b(CONST)\\n'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.statement.karel'
+    'end': '\\b(ROUTINE|VAR|BEGIN)'
+    'name': 'meta.block.const.karel'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  }
+  {
+    'begin': '\\b(?i:(ROUTINE))\\b\\s+(\\w+)'
+    'beginCaptures':
+      '1':
+        'name': 'storage.type.function.karel'
+      '2':
+        'name': 'entity.name.function.karel'
+    'end': '\\b(BEGIN )'
+    'endCaptures':
+      '1':
+        'name': 'keyword.control.statement.karel'
+    'name': 'meta.block.routine.header.karel'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  }
+  {
+    'begin': '\\b(BEGIN)\\n'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.statement.karel'
+    'end': '\\b(END)(?= )'
+    'endCaptures':
+      '1':
+        'name': 'keyword.control.statement.karel'
+    'name': 'meta.block.code.karel'
+    'patterns': [
+      'include': '$self'
     ]
   }
 ]
