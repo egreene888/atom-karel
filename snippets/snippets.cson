@@ -1,4 +1,4 @@
-'.source.pascal':
+'.source.karel':
   'assignment':
     'prefix': 'variable = value'
     'body': '${1:variable} = ${2:value};$3'
@@ -53,7 +53,7 @@
       \t${5:variables}
       BEGIN
       \t${6:code}
-      \t$RETURN (result)
+      \tRETURN (${7:result})
       END ${1:RoutineName}
     """
   'routine declaration':
@@ -64,7 +64,7 @@
       \t${5:variables}
       BEGIN
       \t${6:code}
-      \t$RETURN (result)
+      \tRETURN (${7:result})
       END ${1:RoutineName}
     """
   'routine definition':
