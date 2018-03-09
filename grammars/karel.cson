@@ -3,137 +3,147 @@
 ]
 'name': 'Karel'
 'patterns': [
+
+  {
+    'captures':
+      '1':
+        'name': 'storage.type.function.karel'
+      '2':
+        'name': 'entity.name.function.karel'
+    'match': '\\b(?i:(ROUTINE))\\b\\s+(\\w+)'
+    'name': 'meta.function.karel'
+  }
   {
     'match': '\\b(?i:(\\%ALPHABETIZE|\\%CMOSVARS|\\%CMOS2SHADOW|\\%COMMENT|\\%CRTDEVICE|\\%DEFGROUP|\\%DELAY|\\%ENVIRONMENT|\\%INCLUDE|\\%LOCKGROUP|\\%NOABORT|\\%NOBUSYLAMP|\\%NOLOCKGROUP|\\%NOPAUSE|\\%NOPAUSESHFT|\\%PRIORITY|\\%SHADOWVARS|\\%STACKSIZE|\\%TIMESLICE|\\%TPMOTION|\\%UNINITVARS))\\b'
     'name': 'keyword.other.directives.karel'
   }
   {
-    'match': '\\b(?i:(ARRAY|BOOLEAN|BYTE|CONFIG|DISP_DAT_T|FILE|INTEGER|JOINTPOS|PATH|POSITION|QUEUE_TYPE|REAL|SHORT|STD_PTH_NODE|STRING|STRUCTURE|VECTOR|XYZWPR|XYZWPREX))\\b'
+    'match': '\\b(?i:(ARRAY|BOOLEAN|BYTE|CONFIG|DISP_DAT_T|FILE|INTEGER|JOINTPOS|PATH|POSITION|QUEUE_TYPE|REAL|SHORT|STD_PTH_NODE|STRING|STRUCTURE|VECTOR|XYZWPR|XYZWPREX))(?=(\\(|\\b))'
     'name': 'storage.type.primitive.karel'
   }
   {
-    'match': '\\b(?i:(ATTACH|CANCEL FILE|CLOSE FILE|CLOSE HAND|ENDCONDITION|CONNECT|FOR|ENDFOR|GO TO|HOLD|IF|ENDIF|OPEN FILE|OPEN HAND|PAUSE|PROGRAM|PULSE|PURGE|READ|RELAX HAND|RELEASE|REPEAT|UNTIL|RESUME|RETURN|ROUTINE|SELECT|ENDSELECT|SIGNAL EVENT|STOP|UNHOLD|USING|ENDUSING|WAIT FOR|WHILE|ENDWHILE|WRITE))\\b'
+    'match': '\\b(?i:(ATTACH|BEGIN|CANCEL FILE|CLOSE FILE|CLOSE HAND|END|ENDCONDITION|ELSE|CONNECT|FOR|ENDFOR|GOTO|HOLD|IF|THEN|ENDIF|OPEN FILE|OPEN HAND|PAUSE|PROGRAM|PULSE|PURGE|READ|RELAX HAND|RELEASE|REPEAT|UNINIT|UNTIL|RESUME|RETURN|ROUTINE|SELECT|ENDSELECT|SIGNAL EVENT|STOP|UNHOLD|USING|ENDUSING|WAIT FOR|WHILE|ENDWHILE|WRITE|VAR))(?=(\\(|\\b))'
     'name': 'keyword.control.statement.karel'
   }
   {
-    'match': '\\b(?i:(EVAL|FROM|IN|WHEN|WITH))\\b'
+    'match': '\\b(?i:(EVAL|FROM|IN|WHEN|WITH))(?=(\\(|\\b))'
     'name': 'keyword.control.clause.karel'
   }
   {
-    'match': '\\b(?i:(ABORT|CANCEL|CONTINUE|DISABLE|ENABLE|HOLD|NOABORT|NOMESSAGE|NOPAUSE|PAUSE|PULSE|RESUME|SIGNAL|STOP|UNHOLD|UNPAUSE))\\b'
+    'match': '\\b(?i:(ABORT|CANCEL|CONTINUE|DISABLE|ENABLE|HOLD|NOABORT|NOMESSAGE|NOPAUSE|PAUSE|PULSE|RESUME|SIGNAL|STOP|UNHOLD|UNPAUSE))(?=(\\(|\\b))'
     'name': 'keyword.control.action.karel'
   }
   {
-    'match': '\\b(?i:(CALL_PROG|CALL_PROGLIN|CURR_PROG|FILE_LIST|PROG_LIST|VAR_INFO|VAR_LIST))\\b'
+    'match': '\\b(?i:(CALL_PROG|CALL_PROGLIN|CURR_PROG|FILE_LIST|PROG_LIST|VAR_INFO|VAR_LIST))(?=(\\(|\\b))'
     'name': 'support.function.builtin.byname.karel'
   }
   {
-    'match': '\\b(?i:(DAQ_CHECKP|DAQ_REGPIPE|DAQ_START|DAQ_STOP|DAQ_UNREG|DAQ_WRITE))\\b'
+    'match': '\\b(?i:(DAQ_CHECKP|DAQ_REGPIPE|DAQ_START|DAQ_STOP|DAQ_UNREG|DAQ_WRITE))(?=(\\(|\\b))'
     'name': 'support.function.builtin.data.aquisition.karel'
   }
   {
-    'match': '\\b(?i:(RGET_PORTCMT|RGET_PORTSIM|RGET_PORTVAL|RGET_PREGCMT|RGET_REG|RGET_REG_CMT|RGET_SREGCMT|RGET_STR_REG|RNREG_RECV|RNREG_SEND|RPREG_RECV|RPREG_SEND|RSET_INT_REG|RSET_PORTCMT|RSET_PORTSIM|RSET_PORTVAL|RSET_PREGCMT|RSET_REALREG|RSET_REG_CMT|RSET_SREGCMT|RSET_STR_REG))\\b'
+    'match': '\\b(?i:(RGET_PORTCMT|RGET_PORTSIM|RGET_PORTVAL|RGET_PREGCMT|RGET_REG|RGET_REG_CMT|RGET_SREGCMT|RGET_STR_REG|RNREG_RECV|RNREG_SEND|RPREG_RECV|RPREG_SEND|RSET_INT_REG|RSET_PORTCMT|RSET_PORTSIM|RSET_PORTVAL|RSET_PREGCMT|RSET_REALREG|RSET_REG_CMT|RSET_SREGCMT|RSET_STR_REG))(?=(\\(|\\b))'
     'name': 'support.function.builtin.data.ethernet.karel'
   }
   {
-    'match': '\\b(?i:(CHECK_NAME|COMPARE_FILE|COPY_FILE|DELETE_FILE|DISMOUNT_DEV|DOSFILE_INF|FORMAT_DEV|MOUNT_DEV|MOVE_FILE|PRINT_FILE|PURGE_DEV|RENAME_FILE|XML_ADDTAG|XML_GETDATA|XML_REMTAG|XML_SCAN|XML_SETVAR))\\b'
+    'match': '\\b(?i:(CHECK_NAME|COMPARE_FILE|COPY_FILE|DELETE_FILE|DISMOUNT_DEV|DOSFILE_INF|FORMAT_DEV|MOUNT_DEV|MOVE_FILE|PRINT_FILE|PURGE_DEV|RENAME_FILE|XML_ADDTAG|XML_GETDATA|XML_REMTAG|XML_SCAN|XML_SETVAR))(?=(\\(|\\b))'
     'name': 'support.function.builtin.file.karel'
   }
   {
-    'match': '\\b(?i:(RMCN_SEND|RMCN_ALERT))\\b'
+    'match': '\\b(?i:(RMCN_SEND|RMCN_ALERT))(?=(\\(|\\b))'
     'name': 'support.function.builtin.iphone.karel'
   }
   {
-    'match': '\\b(?i:(BYTES_AHEAD|BYTES_LEFT|CLR_IO_STAT|GET_FILE_POS|GET_PORT_ATR|IO_STATUS|MSG_CONNECT|MSG_DISCO|MSG_PING|PIPE_CONFIG|SET_FILE_ATR|SET_FILE_POS|SET_PORT_ATR|VOL_SPACE))\\b'
+    'match': '\\b(?i:(BYTES_AHEAD|BYTES_LEFT|CLR_IO_STAT|GET_FILE_POS|GET_PORT_ATR|IO_STATUS|MSG_CONNECT|MSG_DISCO|MSG_PING|PIPE_CONFIG|SET_FILE_ATR|SET_FILE_POS|SET_PORT_ATR|VOL_SPACE))(?=(\\(|\\b))'
     'name': 'support.function.builtin.serial.karel'
   }
   {
-    'match': '\\b(?i:(CLR_PORT_SIM|GET_PORT_ASG|GET_PORT_CMT|GET_PORT_MOD|GET_PORT_SIM|GET_PORT_VAL|IO_MOD_TYPE|SET_PORT_ASG|SET_PORT_CMT|SET_PORT_MOD|SET_PORT_SIM|SET_PORT_VAL))\\b'
+    'match': '\\b(?i:(CLR_PORT_SIM|GET_PORT_ASG|GET_PORT_CMT|GET_PORT_MOD|GET_PORT_SIM|GET_PORT_VAL|IO_MOD_TYPE|SET_PORT_ASG|SET_PORT_CMT|SET_PORT_MOD|SET_PORT_SIM|SET_PORT_VAL))(?=(\\(|\\b))'
     'name': 'support.function.builtin.processio.karel'
   }
   {
-    'match': '\\b(?i:(KCL|KCL_NO_WAIT|KCL_STATUS))\\b'
+    'match': '\\b(?i:(KCL|KCL_NO_WAIT|KCL_STATUS))(?=(\\(|\\b))'
     'name': 'support.function.builtin.kcl.karel'
   }
   {
-    'match': '\\b(?i:(CLEAR|CREATE_VAR|LOAD|LOAD_STATUS|PROG_BACKUP|PROG_CLEAR|PROG_RESTORE|RENAME_VAR|RENAME_VARS|SAVE|SAVE_DRAM))\\b'
+    'match': '\\b(?i:(CLEAR|CREATE_VAR|LOAD|LOAD_STATUS|PROG_BACKUP|PROG_CLEAR|PROG_RESTORE|RENAME_VAR|RENAME_VARS|SAVE|SAVE_DRAM))(?=(\\(|\\b))'
     'name': 'support.function.builtin.memory.karel'
   }
   {
-    'match': '\\b(?i:(MIRROR))\\b'
+    'match': '\\b(?i:(MIRROR))(?=(\\(|\\b))'
     'name': 'support.function.builtin.mirror.karel'
   }
   {
-    'match': '\\b(?i:(CNCL_STP_MTN|MOTION_CTL|RESET))\\b'
+    'match': '\\b(?i:(CNCL_STP_MTN|MOTION_CTL|RESET))(?=(\\(|\\b))'
     'name': 'support.function.builtin.motion.karel'
   }
   {
-    'match': '\\b(?i:(ABORT_TASK|CLEAR_SEMA|CONT_TASK|GET_TSK_INFO|LOCK_GROUP|PAUSE_TASK|PEND_SEMA|POST_SEMA|RUN_TASK|SEMA_COUNT|SET_TSK_ATTR|SET_TSK_NAME|UNLOCK_GROUP))\\b'
+    'match': '\\b(?i:(ABORT_TASK|CLEAR_SEMA|CONT_TASK|GET_TSK_INFO|LOCK_GROUP|PAUSE_TASK|PEND_SEMA|POST_SEMA|RUN_TASK|SEMA_COUNT|SET_TSK_ATTR|SET_TSK_NAME|UNLOCK_GROUP))(?=(\\(|\\b))'
     'name': 'support.function.builtin.multiprogramming.karel'
   }
   {
-    'match': '\\b(?i:(APPEND_NODE|COPY_PATH|DELETE_NODE|INSERT_NODE|NODE_SIZE|PATH_LEN))\\b'
+    'match': '\\b(?i:(APPEND_NODE|COPY_PATH|DELETE_NODE|INSERT_NODE|NODE_SIZE|PATH_LEN))(?=(\\(|\\b))'
     'name': 'support.function.builtin.path.karel'
   }
   {
-    'match': '\\b(?i:(ADD_BYNAMEPC|ADD_INTPC|ADD_REALPC|ADD_STRINGPC|SEND_DATAPC|SEND_EVENTPC))\\b'
+    'match': '\\b(?i:(ADD_BYNAMEPC|ADD_INTPC|ADD_REALPC|ADD_STRINGPC|SEND_DATAPC|SEND_EVENTPC))(?=(\\(|\\b))'
     'name': 'support.function.builtin.pccommunication.karel'
   }
   {
-    'match': '\\b(?i:(CHECK_EPOS|CNV_JPOS_REL|CNV_REL_JPOS|CURPOS|CURJPOS|FRAME|IN_RANGE|J_IN_RANGE|JOINT2POS|POS|POS2JOINT|SET_PERCH))\\b'
+    'match': '\\b(?i:(CHECK_EPOS|CNV_JPOS_REL|CNV_REL_JPOS|CURPOS|CURJPOS|FRAME|IN_RANGE|J_IN_RANGE|JOINT2POS|POS|POS2JOINT|SET_PERCH))(?=(\\(|\\b))'
     'name': 'support.function.builtin.position.karel'
   }
   {
-    'match': '\\b(?i:(APPEND_QUEUE|COPY_QUEUE|DELETE_QUEUE|GET_QUEUE|INIT_QUEUE|INSERT_QUEUE|MODIFY_QUEUE))\\b'
+    'match': '\\b(?i:(APPEND_QUEUE|COPY_QUEUE|DELETE_QUEUE|GET_QUEUE|INIT_QUEUE|INSERT_QUEUE|MODIFY_QUEUE))(?=(\\(|\\b))'
     'name': 'support.function.builtin.queue.karel'
   }
   {
-    'match': '\\b(?i:(CLR_POS_REG|GET_JPOS_REG|GET_POS_REG|GET_PREG_CMT|GET_REG|GET_REG_CMT|GET_SREG_CMT|GET_STR_REG|POS_REG_TYPE|SET_EPOS_REG|SET_INT_REG|SET_JPOS_REG|SET_POS_REG|SET_PREG_CMT|SET_REAL_REG|SET_REG_CMT|SET_SREG_CMT|SET_STR_REG))\\b'
+    'match': '\\b(?i:(CLR_POS_REG|GET_JPOS_REG|GET_POS_REG|GET_PREG_CMT|GET_REG|GET_REG_CMT|GET_SREG_CMT|GET_STR_REG|POS_REG_TYPE|SET_EPOS_REG|SET_INT_REG|SET_JPOS_REG|SET_POS_REG|SET_PREG_CMT|SET_REAL_REG|SET_REG_CMT|SET_SREG_CMT|SET_STR_REG))(?=(\\(|\\b))'
     'name': 'support.function.builtin.registers.karel'
   }
   {
-    'match': '\\b(?i:(CNV_CNF_STRG|CNV_CONF_STR|CNV_INT_STR|CNV_REAL_STR|CNV_STR_CONF|CNV_STR_INT|CNV_STR_REAL|STR_LEN|SUB_STR))\\b'
+    'match': '\\b(?i:(CNV_CNF_STRG|CNV_CONF_STR|CNV_INT_STR|CNV_REAL_STR|CNV_STR_CONF|CNV_STR_INT|CNV_STR_REAL|STR_LEN|SUB_STR))(?=(\\(|\\b))'
     'name': 'support.function.builtin.string.karel'
   }
   {
-    'match': '\\b(?i:(ABS|ACOS|ARRAY_LEN|ASIN|ATAN2|BYNAME|CHR|COS|EXP|GET_VAR|INDEX|INV|LN|ORD|ROUND|SET_VAR|SIN|SQRT|TAN|TRUNC))\\b'
+    'match': '\\b(?i:(ABS|ACOS|ARRAY_LEN|ASIN|ATAN2|BYNAME|CHR|COS|EXP|GET_VAR|INDEX|INV|LN|ORD|ROUND|SET_VAR|SIN|SQRT|TAN|TRUNC))(?=(\\(|\\b))'
     'name': 'support.function.builtin.system.karel'
   }
   {
-    'match': '\\b(?i:(CNV_STR_TIME|CNV_TIME_STR|GET_TIME|GET_USEC_SUB|GET_USEC_TIM|SET_TIME))\\b'
+    'match': '\\b(?i:(CNV_STR_TIME|CNV_TIME_STR|GET_TIME|GET_USEC_SUB|GET_USEC_TIM|SET_TIME))(?=(\\(|\\b))'
     'name': 'support.function.builtin.time.karel'
   }
   {
-    'match': '\\b(?i:(AVL_POS_NUM|CLOSE_TPE|COPY_TPE|CREATE_TPE|DEL_INST_TPE|GET_ATTR_PRG|GET_JPOS_TPE|GET_POS_FRM|GET_POS_TPE|GET_POS_TYP|GET_TPE_CMT|GET_TPE_PRM|OPEN_TPE|SELECT_TPE|SET_ATTR_PRG|SET_EPOS_TPE|SET_JPOS_TPE|SET_POS_TPE|SET_TPE_CMT|SET_TRNS_TPE))\\b'
+    'match': '\\b(?i:(AVL_POS_NUM|CLOSE_TPE|COPY_TPE|CREATE_TPE|DEL_INST_TPE|GET_ATTR_PRG|GET_JPOS_TPE|GET_POS_FRM|GET_POS_TPE|GET_POS_TYP|GET_TPE_CMT|GET_TPE_PRM|OPEN_TPE|SELECT_TPE|SET_ATTR_PRG|SET_EPOS_TPE|SET_JPOS_TPE|SET_POS_TPE|SET_TPE_CMT|SET_TRNS_TPE))(?=(\\(|\\b))'
     'name': 'support.function.builtin.tpe.karel'
   }
   {
-    'match': '\\b(?i:(TRANSLATE))\\b'
+    'match': '\\b(?i:(TRANSLATE))(?=(\\(|\\b))'
     'name': 'support.function.builtin.translate.karel'
   }
   {
-    'match': '\\b(?i:(ACT_SCREEN|ADD_DICT|ACT_TABLE|ATT_WINDOW_D|ATT_WINDOW_S|CHECK_DICT|CNC_DYN_DISB|CNC_DYN_DISE|CNC_DYN_DISI|CNC_DYN_DISP|CNC_DYN_DISR|CNC_DYN_DISS|DEF_SCREEN|DEF_WINDOW|DET_WINDOW|DISCTRL_ALPH|DISCTRL_FORM|DISCTRL_LIST|DISCTRL_PLMN|DISCTRL_SBMN|DISCTRL_TBL|FORCE_SPMENU|INI_DYN_DISB|INI_DYN_DISE|INI_DYN_DISI|INI_DYN_DISP|INI_DYN_DISR|INI_DYN_DISS|INIT_TBL|POP_KEY_RD|PUSH_KEY_RD|READ_DICT|READ_DICT_V|READ_KB|REMOVE_DICT|SET_CURSOR|SET_LANG|WRITE_DICT|WRITE_DICT_V))\\b'
+    'match': '\\b(?i:(ACT_SCREEN|ADD_DICT|ACT_TABLE|ATT_WINDOW_D|ATT_WINDOW_S|CHECK_DICT|CNC_DYN_DISB|CNC_DYN_DISE|CNC_DYN_DISI|CNC_DYN_DISP|CNC_DYN_DISR|CNC_DYN_DISS|DEF_SCREEN|DEF_WINDOW|DET_WINDOW|DISCTRL_ALPH|DISCTRL_FORM|DISCTRL_LIST|DISCTRL_PLMN|DISCTRL_SBMN|DISCTRL_TBL|FORCE_SPMENU|INI_DYN_DISB|INI_DYN_DISE|INI_DYN_DISI|INI_DYN_DISP|INI_DYN_DISR|INI_DYN_DISS|INIT_TBL|POP_KEY_RD|PUSH_KEY_RD|READ_DICT|READ_DICT_V|READ_KB|REMOVE_DICT|SET_CURSOR|SET_LANG|WRITE_DICT|WRITE_DICT_V))(?=(\\(|\\b))'
     'name': 'support.function.builtin.ui.karel'
   }
   {
-    'match': '\\b(?i:(APPROACH|ORIENT))\\b'
+    'match': '\\b(?i:(APPROACH|ORIENT))(?=(\\(|\\b))'
     'name': 'support.function.builtin.vector.karel'
   }
   {
-    'match': '\\b(?i:(V_CAM_CALIB|V_GET_OFFSET|V_GET_PASSFL|V_GET_QUEUE|V_INIT_QUEUE|V_OVERRIDE|V_RALC_QUEUE|V_RUN_FIND|V_SET_REF|V_START_VTRK|V_STOP_VTRK|VREG_FND_POS|VREG_OFFSET))\\b'
+    'match': '\\b(?i:(V_CAM_CALIB|V_GET_OFFSET|V_GET_PASSFL|V_GET_QUEUE|V_INIT_QUEUE|V_OVERRIDE|V_RALC_QUEUE|V_RUN_FIND|V_SET_REF|V_START_VTRK|V_STOP_VTRK|VREG_FND_POS|VREG_OFFSET))(?=(\\(|\\b))'
     'name': 'support.function.builtin.vision.karel'
   }
 
   {
-    'match': '\\b(?i:(SEMAPHORE|EVENT|TIMER|CONDITION))\\b'
+    'match': '\\b(?i:(SEMAPHORE|EVENT|TIMER|CONDITION))(?=(\\(|\\b))'
     'name': 'keyword.other.condition.karel'
   }
   {
-    'match': '\\b(?i:(CR))\\b'
+    'match': '\\b(?i:(CR|TRUE|FALSE))(?=(\\(|\\b))'
     'name': 'variable.language.karel'
   }
   {
-    'match': '\\b(?i:(AND|OR|NOT|DIV|MOD))\\b'
+    'match': '\\b(?i:(AND|OR|NOT|DIV|MOD))(?=(\\(|\\b))'
     'name': 'keyword.operator.logical.karel'
   }
   {
@@ -141,7 +151,15 @@
     'name': 'constant.numeric.karel'
   }
   {
-    'begin': '(^[ \\t]+)?(?=--)'
+    'match': '<\\=|>\\=|\\=|\\>=\\<|<|>|<>'
+    'name': 'keyword.operator.comparison.karel'
+  }
+  {
+    'match': '\\+|\\-|\\*|/|%'
+    'name': 'keyword.operator.arithmetic.karel'
+  }
+  {
+    'begin': '([ \\t]+)?(?=--)'
     'beginCaptures':
       '1':
         'name': 'punctuation.whitespace.comment.leading.karel'
