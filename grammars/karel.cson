@@ -189,6 +189,10 @@
     'name': 'variable.parameter.system.karel'
   }
   {
+    'match': '\\b(?i:(DIN|DOUT|GIN|GOUT|AIN|AOUT|RDI|RDO|OPIN|OPOUT|TPIN|TPOUT|HAND))(?=\\[)'
+    'name': 'variable.other.io.karel'
+  }
+  {
     'begin': '([ \\t]+)?(?=--)'
     'beginCaptures':
       '1':
