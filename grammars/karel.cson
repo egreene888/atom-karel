@@ -7,6 +7,15 @@
   {
     'captures':
       '1':
+        'name': 'storage.type.function.program.karel'
+      '2':
+        'name': 'entity.name.function.program.karel'
+    'match': '\\b(?i:(PROGRAM))\\b\\s+(\\w+)'
+    'name': 'meta.function.program.karel'
+  }
+  {
+    'captures':
+      '1':
         'name': 'storage.type.function.karel'
       '2':
         'name': 'entity.name.function.karel'
@@ -14,11 +23,20 @@
     'name': 'meta.function.karel'
   }
   {
+    'captures':
+      '1':
+        'name': 'keyword.control.statement.karel'
+      '2':
+        'name': 'entity.function.name.karel'
+    'match': '\\b(?i:(END))\\b\\s+(\\w+)'
+    'name': 'meta.function.karel'
+  }
+  {
     'match': '\\b(?i:(\\%ALPHABETIZE|\\%CMOSVARS|\\%CMOS2SHADOW|\\%COMMENT|\\%CRTDEVICE|\\%DEFGROUP|\\%DELAY|\\%ENVIRONMENT|\\%INCLUDE|\\%LOCKGROUP|\\%NOABORT|\\%NOBUSYLAMP|\\%NOLOCKGROUP|\\%NOPAUSE|\\%NOPAUSESHFT|\\%PRIORITY|\\%SHADOWVARS|\\%STACKSIZE|\\%TIMESLICE|\\%TPMOTION|\\%UNINITVARS))\\b'
     'name': 'keyword.other.directives.karel'
   }
   {
-    'match': '\\b(?i:(PROGRAM|ARRAY|BOOLEAN|BYTE|CONFIG|DISP_DAT_T|FILE|INTEGER|JOINTPOS|PATH|POSITION|QUEUE_TYPE|REAL|SHORT|STD_PTH_NODE|STRING|STRUCTURE|VECTOR|XYZWPR|XYZWPREX))(?=(\\(|\\b))'
+    'match': '\\b(?i:(ARRAY|BOOLEAN|BYTE|CONFIG|DISP_DAT_T|FILE|INTEGER|JOINTPOS|PATH|POSITION|QUEUE_TYPE|REAL|SHORT|STD_PTH_NODE|STRING|STRUCTURE|VECTOR|XYZWPR|XYZWPREX))(?=(\\(|\\b))'
     'name': 'storage.type.primitive.karel'
   }
   {
@@ -30,7 +48,7 @@
     'name': 'keyword.control.statement.karel'
   }
   {
-    'match': '\\b(?i:(ATTACH|CANCEL FILE|CLOSE FILE|CLOSE HAND|ENDCONDITION|CONNECT|HOLD|OPEN FILE|OPEN HAND|PAUSE|PULSE|PURGE|READ|RELAX HAND|RELEASE|REPEAT|UNINIT|RESUME|SIGNAL EVENT|STOP|UNHOLD|WAIT FOR|WRITE))(?=(\\(|\\b))'
+    'match': '\\b(?i:(ATTACH|CANCEL FILE|CLOSE FILE|MOVE TO|ENDMOVE|CLOSE HAND|ENDCONDITION|CONNECT|HOLD|OPEN FILE|OPEN HAND|PAUSE|PULSE|PURGE|READ|RELAX HAND|RELEASE|REPEAT|UNINIT|RESUME|SIGNAL EVENT|STOP|UNHOLD|WAIT FOR|WRITE))(?=(\\(|\\b))'
     'name': 'keyword.other.statement.karel'
   }
   {
@@ -94,7 +112,7 @@
     'name': 'support.function.builtin.pccommunication.karel'
   }
   {
-    'match': '\\b(?i:(CHECK_EPOS|CNV_JPOS_REL|CNV_REL_JPOS|CURPOS|CURJPOS|FRAME|IN_RANGE|J_IN_RANGE|JOINT2POS|POS|POS2JOINT|SET_PERCH))(?=(\\(|\\b))'
+    'match': '\\b(?i:(CHECK_EPOS|CNV_JPOS_REL|CNV_REL_JPOS|CURPOS|CURJPOS|FRAME|IN_RANGE|J_IN_RANGE|JOINT2POS|POS|UNPOS|POS2JOINT|SET_PERCH))(?=(\\(|\\b))'
     'name': 'support.function.builtin.position.karel'
   }
   {
@@ -161,6 +179,14 @@
   {
     'match': '\\+|\\-|\\*|/|%'
     'name': 'keyword.operator.arithmetic.karel'
+  }
+  {
+    'match': '(\\w+)(?=::)'
+    'name': 'entity.name.tag.label.karel'
+  }
+  {
+    'match': '(\\$\\w+)'
+    'name': 'variable.parameter.system.karel'
   }
   {
     'begin': '([ \\t]+)?(?=--)'
