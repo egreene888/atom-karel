@@ -1,7 +1,7 @@
 '.source.karel':
   'assignment':
     'prefix': 'variable = value'
-    'body': '${1:variable} = ${2:value};$3'
+    'body': '${1:variable} = ${2:value}'
   'array declaration':
     'prefix': 'ARRAY[count] OF datatype'
     'body': 'ARRAY[${1:count}] OF ${2:datatype};'
@@ -45,7 +45,7 @@
       \t$3
       ENDFOR
     """
-  'routine definition':
+  'routine with parameters and return value':
     'prefix': 'ROUTINE RoutineName(parameter: parameterType): returnType'
     'body': """
       ROUTINE ${1:RoutineName}(${2:parameter}: ${3:parameterType}): ${4:returnType}
@@ -56,7 +56,7 @@
       \tRETURN (${7:result})
       END ${1:RoutineName}
     """
-  'routine declaration':
+  'routine declaration with return value':
     'prefix': 'ROUTINE RoutineName: returnType'
     'body': """
       ROUTINE ${1:RoutineName}: ${2:returnType}
@@ -67,7 +67,7 @@
       \tRETURN (${7:result})
       END ${1:RoutineName}
     """
-  'routine definition':
+  'routine declaration with parameters':
     'prefix': 'ROUTINE RoutineName(parameter: parameterType)'
     'body': """
       ROUTINE ${1:RoutineName}(${2:parameter}: ${3:parameterType})
@@ -75,6 +75,16 @@
       \t${5:variables}
       BEGIN
       \t${6:code}
+      END ${1:RoutineName}
+    """
+  'routine declaration bare':
+    'prefix': 'ROUTINE RoutineName'
+    'body': """
+      ROUTINE ${1:RoutineName}
+      VAR
+      \t${2:variables}
+      BEGIN
+      \t${3:code}
       END ${1:RoutineName}
     """
   'getmem':
@@ -124,19 +134,18 @@
     'prefix': 'VAR variable: datatype'
     'body': """
       VAR
-      \t${1:variable}: ${2:datatype};
+      \t${1:variable}: ${2:datatype}$3
     """
   'variable declaration':
     'prefix': 'variable: datatype'
-    'body': '${1:variable}: ${2:datatype};$3'
+    'body': '${1:variable}: ${2:datatype}'
   'while-do':
-    'prefix': 'WHILE condition DO code ENDWHILE;'
+    'prefix': 'WHILE condition DO code ENDWHILE'
     'body': """
       WHILE ${1:condition} DO
       \t${2:code}
       ENDWHILE
     """
-
 
 
   'true':
