@@ -1,7 +1,7 @@
 {
   "name": "language-karel",
   "main": "./lib/language-karel",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Grammar and snippets for FANUC robots language Karel",
   "keywords": [],
   "activationCommands": {
