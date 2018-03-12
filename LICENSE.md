@@ -1,4 +1,4 @@
-Copyright (c) 2017 Manuel Fuchs
+Copyright (c) 2018 Teodor Michalski
 
 This software is released under the MIT license: http://opensource.org/licenses/MIT
 
