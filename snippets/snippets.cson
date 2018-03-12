@@ -23,13 +23,7 @@
     'prefix': 'CONST constants'
     'body': """
       CONST
-      \t${1:constants}
-    """
-  'else':
-    'prefix': 'ELSE code'
-    'body': """
-      ELSE
-      \t${1:code}
+      \t${1:constant} : ${2:type}
     """
   'for to array':
     'prefix': 'FOR i = Low(array-name) TO High(array-name)'
@@ -37,6 +31,7 @@
       FOR ${1:i} = Low(${2:array-name}) TO High(${2:array-name}) DO
       \t$3
       ENDFOR
+      $4
     """
   'for downto array':
     'prefix': 'FOR i = High(array-name) DOWNTO Low(array-name)'
@@ -44,6 +39,7 @@
       FOR ${1:i} = High(${2:array-name}) DOWNTO Low(${2:array-name}) DO
       \t$3
       ENDFOR
+      $4
     """
   'routine with parameters and return value':
     'prefix': 'ROUTINE RoutineName(parameter: parameterType): returnType'
@@ -55,6 +51,7 @@
       \t${6:code}
       \tRETURN (${7:result})
       END ${1:RoutineName}
+      $8
     """
   'routine declaration with return value':
     'prefix': 'ROUTINE RoutineName: returnType'
@@ -66,6 +63,7 @@
       \t${6:code}
       \tRETURN (${7:result})
       END ${1:RoutineName}
+      $8
     """
   'routine declaration with parameters':
     'prefix': 'ROUTINE RoutineName(parameter: parameterType)'
@@ -76,6 +74,7 @@
       BEGIN
       \t${6:code}
       END ${1:RoutineName}
+      $7
     """
   'routine declaration bare':
     'prefix': 'ROUTINE RoutineName'
@@ -86,6 +85,7 @@
       BEGIN
       \t${3:code}
       END ${1:RoutineName}
+      $4
     """
   'getmem':
     'prefix': 'GetMem(pointer, size-of-needed-Memory);'
@@ -96,22 +96,23 @@
       IF ${1:condition} THEN
       \t${2:code}
       ENDIF
+      $4
     """
   'if else':
-    'prefix': 'IF condition THEN code ENDIF'
+    'prefix': 'IF condition THEN code ELSE code ENDIF'
     'body': """
       IF ${1:condition} THEN
       \t${2:code}
       ELSE
       \t${3:code}
       ENDIF
+      $4
     """
   'else':
     'prefix': 'ELSE code ENDIF'
     'body': """
-      ELSE BEGIN
+      ELSE
       \t${1:code}
-      ENDIF
     """
   'program':
     'prefix': 'PROGRAM program-name VAR variables BEGIN main-code END'
@@ -137,14 +138,29 @@
       \t${1:variable}: ${2:datatype}$3
     """
   'variable declaration':
-    'prefix': 'variable: datatype'
-    'body': '${1:variable}: ${2:datatype}'
+    'prefix': 'variable : datatype'
+    'body': '${1:variable} : ${2:datatype}'
   'while-do':
     'prefix': 'WHILE condition DO code ENDWHILE'
     'body': """
       WHILE ${1:condition} DO
       \t${2:code}
       ENDWHILE
+    """
+  'move to':
+    'prefix': 'MOVE TO position'
+    'body': """
+      MOVE TO ${1:position}
+      $3
+    """
+  'move to until':
+    'prefix': 'MOVE TO position, UNTIL condition THEN code ENDMOVE'
+    'body': """
+      MOVE TO ${1:position},
+      \tUNTIL ${2:condition} THEN
+      \t\t${3:code}
+      ENDMOVE
+      $3
     """
 
 
