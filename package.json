@@ -1,14 +1,14 @@
 {
   "name": "language-karel",
   "main": "./lib/language-karel",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Grammar and snippets for FANUC robots language Karel",
   "keywords": [
   ],
   "activationCommands": {
     "atom-workspace": "language-karel:toggle"
   },
-  "repository": "https://gitlab.com/teosioryt/atom-karel",
+  "repository": "https://github.com/teodormichalski/atom-karel",
   "author": "Teodor Michalski",
   "license": "MIT",
   "engines": {
