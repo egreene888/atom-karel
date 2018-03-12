@@ -23,11 +23,11 @@
     'name': 'meta.function.karel'
   }
   {
-    'match': '\\b(?i:(ARRAY|BOOLEAN|BYTE|CONFIG|DISP_DAT_T|FILE|INTEGER|JOINTPOS|PATH|POSITION|QUEUE_TYPE|REAL|SHORT|STD_PTH_NODE|STRING|STRUCTURE|VECTOR|XYZWPR|XYZWPREX))(?=(\\(|\\b))'
+    'match': '\\b(?i:(ARRAY|BOOLEAN|BYTE|CONFIG|DISP_DAT_T|FILE|INTEGER|JOINTPOS|PATH|POSITION|QUEUE_TYPE|REAL|SHORT|STD_PTH_NODE|STRING|STRUCTURE|ENDSTRUCTURE|VECTOR|XYZWPR|XYZWPREX|TYPE))(?=(\\(|\\b))'
     'name': 'storage.type.primitive.karel'
   }
   {
-    'match': '\\b(?i:(\\%ALPHABETIZE|\\%CMOSVARS|\\%CMOS2SHADOW|\\%COMMENT|\\%CRTDEVICE|\\%DEFGROUP|\\%DELAY|\\%ENVIRONMENT|\\%INCLUDE|\\%LOCKGROUP|\\%NOABORT|\\%NOBUSYLAMP|\\%NOLOCKGROUP|\\%NOPAUSE|\\%NOPAUSESHFT|\\%PRIORITY|\\%SHADOWVARS|\\%STACKSIZE|\\%TIMESLICE|\\%TPMOTION|\\%UNINITVARS))\\b'
+    'match': '(?i:(\\%ALPHABETIZE|\\%CMOSVARS|\\%CMOS2SHADOW|\\%COMMENT|\\%CRTDEVICE|\\%DEFGROUP|\\%DELAY|\\%ENVIRONMENT|\\%INCLUDE|\\%LOCKGROUP|\\%NOABORT|\\%NOBUSYLAMP|\\%NOLOCKGROUP|\\%NOPAUSE|\\%NOPAUSESHFT|\\%PRIORITY|\\%SHADOWVARS|\\%STACKSIZE|\\%TIMESLICE|\\%TPMOTION|\\%UNINITVARS))\\b'
     'name': 'keyword.other.directives.karel'
   }
   {
@@ -247,7 +247,7 @@
     'beginCaptures':
       '1':
         'name': 'keyword.control.statement.karel'
-    'end': '(?=\\b(ROUTINE|CONST|BEGIN))'
+    'end': '(?=\\b(ROUTINE|CONST|BEGIN|TYPE))'
     'name': 'meta.block.var.karel'
     'patterns': [
       {
@@ -260,7 +260,7 @@
     'beginCaptures':
       '1':
         'name': 'keyword.control.statement.karel'
-    'end': '\\b(ROUTINE|VAR|BEGIN)'
+    'end': '\\b(ROUTINE|VAR|BEGIN|TYPE)'
     'name': 'meta.block.const.karel'
     'patterns': [
       {
