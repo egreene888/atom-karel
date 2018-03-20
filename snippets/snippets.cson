@@ -87,9 +87,6 @@
       END ${1:RoutineName}
       $4
     """
-  'getmem':
-    'prefix': 'GetMem(pointer, size-of-needed-Memory);'
-    'body': 'GetMem(${1:pointer}, ${2:size-of-needed-Memory});'
   'if':
     'prefix': 'IF condition THEN code ENDIF'
     'body': """
@@ -120,9 +117,9 @@
       PROGRAM ${1:program-name}
 
       VAR
-      \t${3:variables}
+      \t${2:variables}
       BEGIN
-      \t${2:main-code}
+      \t${3:main-code}
       END ${1:program-name}
     """
   'uses':
@@ -153,6 +150,12 @@
       MOVE TO ${1:position}
       $3
     """
+  'move with settings':
+    'prefix': 'WITH settings MOVE TO position'
+    'body': """
+      WITH ${1:settings} MOVE TO ${2:position}
+      $3
+    """
   'move to until':
     'prefix': 'MOVE TO position, UNTIL condition THEN code ENDMOVE'
     'body': """
@@ -176,6 +179,33 @@
   'datatype vector':
     'prefix': 'VECTOR'
     'body': 'VECTOR'
+  'datatype xyzwpr':
+    'prefix': 'XYZWPR'
+    'body': 'XYZWPR'
+  'datatype xyzwprex':
+    'prefix': 'XYZWPREX'
+    'body': 'XYZWPREX'
+  'datatype jointpos':
+    'prefix': 'JOINTPOS'
+    'body': 'JOINTPOS'
+  'datatype jointpos1':
+    'prefix': 'JOINTPOS1'
+    'body': 'JOINTPOS1'
+  'datatype jointpos2':
+    'prefix': 'JOINTPOS2'
+    'body': 'JOINTPOS2'
+  'datatype jointpos3':
+    'prefix': 'JOINTPOS3'
+    'body': 'JOINTPOS3'
+  'datatype jointpos4':
+    'prefix': 'JOINTPOS4'
+    'body': 'JOINTPOS4'
+  'datatype jointpos5':
+    'prefix': 'JOINTPOS5'
+    'body': 'JOINTPOS5'
+  'datatype jointpos6':
+    'prefix': 'JOINTPOS6'
+    'body': 'JOINTPOS6'
   'datatype position':
     'prefix': 'POSITION'
     'body': 'POSITION'
