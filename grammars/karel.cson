@@ -14,15 +14,6 @@
     'name': 'meta.function.program.karel'
   }
   {
-    'captures':
-      '1':
-        'name': 'keyword.control.statement.karel'
-      '2':
-        'name': 'entity.function.name.karel'
-    'match': '\\b(?i:(END))\\b\\s+(\\w+)'
-    'name': 'meta.function.karel'
-  }
-  {
     'match': '\\b(?i:(ARRAY|BOOLEAN|BYTE|CONFIG|DISP_DAT_T|FILE|INTEGER|JOINTPOS|PATH|POSITION|QUEUE_TYPE|REAL|SHORT|STD_PTH_NODE|STRING|STRUCTURE|ENDSTRUCTURE|VECTOR|XYZWPR|XYZWPREX|TYPE))(?=(\\(|\\b))'
     'name': 'storage.type.primitive.karel'
   }
@@ -291,10 +282,12 @@
     'beginCaptures':
       '1':
         'name': 'keyword.control.statement.karel'
-    'end': '\\b(END)(?= )'
+    'end': '\\b(?i:(END))\\b\\s+(\\w+)'
     'endCaptures':
       '1':
         'name': 'keyword.control.statement.karel'
+      '2':
+        'name': 'entity.name.function.karel'
     'name': 'meta.block.code.karel'
     'patterns': [
       'include': '$self'
