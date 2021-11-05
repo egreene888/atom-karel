@@ -1,0 +1,3 @@
+'.source.karel':
+  'editor':
+      'commentStart': '-- '
