@@ -159,7 +159,7 @@
     'name': 'keyword.operator.comparison.karel'
   }
   {
-    'match': '\\+|\\-|\\*|/|%'
+    'match': '\\+|\\-(?!-)|\\*|/|%'
     'name': 'keyword.operator.arithmetic.karel'
   }
   {
