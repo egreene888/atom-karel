@@ -251,7 +251,7 @@
     'beginCaptures':
       '1':
         'name': 'keyword.control.statement.karel'
-    'end': '\\b(ROUTINE|VAR|BEGIN|TYPE)'
+    'end': '(?=\\b(ROUTINE|VAR|BEGIN|TYPE))'
     'name': 'meta.block.const.karel'
     'patterns': [
       {
