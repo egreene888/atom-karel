@@ -228,7 +228,7 @@
         'include': '$self'
       }
       {
-        'match': '\\b(?i:(CASE))(?= \\((\\w+)\\):)'
+        'match': '\\b(?i:(CASE))(?= +\\((\\w+)\\)\\s*:)'
         'name': 'keyword.control.clause.karel'
       }
     ]
