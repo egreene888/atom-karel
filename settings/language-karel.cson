@@ -1,3 +1,5 @@
 '.source.karel':
   'editor':
       'commentStart': '-- '
+      'softTabs': 'true'
+      'tabLength': 2
