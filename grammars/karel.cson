@@ -1,18 +1,35 @@
-'name' 'Karel'
-'scopeName' 'source.karel'
-'fileTypes' [
+name: 'Karel'
+scopeName: 'source.karel'
+# type: 'tree-sitter'
+fileTypes: [
   'kl'
 ]
-'patterns' [
+patterns: [
   {
-    'comment' 'PROGRAM'
-    'match' '\\b(?'i'(PROGRAM))\\b\\s+(\\w+)'
-    'captures'
-      '0'
-        'name' 'meta.function.program.karel'
-      '1'
-        'name' 'storage.type.function.program.karel'
-      '2'
-        'name' 'entity.name.function.program.karel'
+    include:'#program'
   }
 ]
+
+repository:
+  datatypes:
+    comment: 'Data Types'
+    match: '\\b(?i:(ARRAY|BOOLEAN|BYTE|CONFIG|DISP_DAT_T|FILE|INTEGER|JOINTPOS|PATH|POSITION|QUEUE_TYPE|REAL|SHORT|STD_PTH_NODE|STRING|STRUCTURE|ENDSTRUCTURE|VECTOR|XYZWPR|XYZWPREX|TYPE))(?=(\\(|\\b))'
+    name: 'storage.type.primitive.karel'
+  directives:
+    comment: 'Interpreter directives'
+    match: '(?i:(\\%ALPHABETIZE|\\%CMOSVARS|\\%CMOS2SHADOW|\\%COMMENT|\\%CRTDEVICE|\\%DEFGROUP|\\%DELAY|\\%ENVIRONMENT|\\%INCLUDE|\\%LOCKGROUP|\\%NOABORT|\\%NOBUSYLAMP|\\%NOLOCKGROUP|\\%NOPAUSE|\\%NOPAUSESHFT|\\%PRIORITY|\\%SHADOWVARS|\\%STACKSIZE|\\%TIMESLICE|\\%TPMOTION|\\%UNINITVARS))\\b'
+    name: 'keyword.other.directives.karel'
+  keywords:
+    include: '#keyword_control_clause'
+  keyword_control_clause:
+    match: '\\b(?i:(EVAL|FROM|IN|WHEN|WITH|OF))(?=(\\(|\\b))'
+    name: 'keyword.control.clause.karel'
+  program:
+    comment: 'PROGRAM block'
+    match: '\\b(?i:(PROGRAM))\\b\\s+(\\w+)'
+    name: 'meta.function.program.karel'
+    captures:
+      1:
+        name: 'storage.type.function.program.karel'
+      2:
+        name: 'entity.name.function.program.karel'

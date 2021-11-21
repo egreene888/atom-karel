@@ -1,0 +1,7 @@
+folds: [
+  {
+    comment: 'PROGRAM -- END'
+    start: '\\b(?i:(PROGRAM))\\b\\s+(\\w+)'
+    end: '$2'
+  }
+]
